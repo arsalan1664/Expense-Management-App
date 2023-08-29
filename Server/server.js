@@ -20,9 +20,9 @@ app.use(morgan('dev'));
 app.use(express.json())
 
 // routes
-app.get('/',(req,res)=>(
-    res.send('<h1>hello world</h1>')
-))
+app.use('/api/v1/users', require('./routes/userRoute'))
+app.use('/ars', require('./routes/useArs'))
+
 
 // port
 const PORT = 8080 || process.env.PORT
